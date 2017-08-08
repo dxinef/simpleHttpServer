@@ -1,4 +1,6 @@
-simpleHttpServer
+simpleWebServer
+
+a simple,static http web server
 
 > 开启一个简单的静态http服务
 >

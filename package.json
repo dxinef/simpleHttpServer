@@ -1,12 +1,19 @@
 {
-  "name": "simpleHttpServer",
+  "name": "simplewebserver",
   "version": "1.0.0",
-  "description": "a simple,static http server",
+  "description": "a simple,static http web server",
   "main": "index.js",
   "scripts": {
-    "start": "node index"
+    "test": "node index"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dxinef/simpleWebServer.git"
+  },
   "author": "dxinef",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dxinef/simpleWebServer/issues"
+  },
+  "homepage": "https://github.com/dxinef/simpleWebServer#readme"
 }
