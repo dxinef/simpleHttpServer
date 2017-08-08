@@ -1,0 +1,12 @@
+{
+  "name": "simpleHttpServer",
+  "version": "1.0.0",
+  "description": "a simple,static http server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "keywords": [],
+  "author": "dxinef",
+  "license": "ISC"
+}
