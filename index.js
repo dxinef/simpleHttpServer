@@ -12,21 +12,29 @@ const path = require('path');
 const http = require('http');
 const url = require('url');
 const process = require("process");
+const program = require('commander');
 
-//port -- default port is 8080
-var port = process.argv[2] || 8080;
-var cwd = process.cwd();
+program
+  .version('0.1.0')
+  .option('-d, --dir [dir]', 'local website path / 网站所在本地路径，默认为当前目录')
+  .option('-p, --port [port]', 'port / 监听的端口号，默认为8080')
+  .parse(process.argv);
+
+var localPath = program.dir ?  program.dir : process.cwd(),
+    port = program.port ? program.port : 8080;
 
 //create server
 var server = http.createServer(requestListener); 
 server.listen(port);
 
-console.log("Server runing at: http://localhost:" + port + "."); //server run
+//server run
+console.log("Local path: " + localPath);
+console.log("Server runing at: http://localhost:" + port); 
 
 //requestListener
 function requestListener(req, res){
 	var pathname = url.parse(req.url).pathname;
-	var realPath = decodeURI(path.join(cwd, pathname)); //get local file path
+	var realPath = decodeURI(path.join(localPath, pathname)); //get local file path
 
 	fs.exists(realPath, function (exists) {
 		if (!exists) { // if file not found
